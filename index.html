@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lui Secondary School Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login-screen" class="login-screen">
+  <div class="login-hero">
+    <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+    <div class="crest">L</div>
+    <h1>Lui Secondary School</h1>
+    <p class="tagline">Luampa District &bull; Zambia</p>
+    <div class="hero-clock" id="hero-clock"></div>
+    <p class="hero-text">One portal for timetables, fee payments and period registers &mdash; for pupils and teachers.</p>
+    <ul class="hero-points">
+      <li>View your weekly timetable</li>
+      <li>Pay and track school fees</li>
+      <li>Period-by-period attendance registers</li>
+    </ul>
+  </div>
+  <div class="login-card">
+    <h2>Sign in</h2>
+    <p class="muted">Choose your account type and enter your details.</p>
+    <div class="role-switch" id="role-switch">
+      <button type="button" class="active" data-role="pupil">Pupil</button>
+      <button type="button" data-role="teacher">Teacher</button>
+      <button type="button" data-role="admin">Admin</button>
+    </div>
+    <form id="login-form" autocomplete="off">
+      <label for="login-id" id="login-id-label">Pupil ID</label>
+      <input id="login-id" type="text" placeholder="e.g. LSS26-001" required>
+      <label for="login-pin">PIN</label>
+      <input id="login-pin" type="password" placeholder="Enter your PIN" required>
+      <div id="login-error" class="form-error" role="alert"></div>
+      <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <div class="demo-box">
+      <strong>Demo accounts</strong>
+      <div>Pupil: <code>LSS26-001</code> &nbsp; PIN: <code>1234</code></div>
+      <div>Teacher: <code>T001</code> (Bursar) or <code>T002</code> &nbsp; PIN: <code>1234</code></div>
+      <div>Head Teacher (Admin): <code>HT001</code> &nbsp; PIN: <code>1234</code></div>
+    </div>
+  </div>
+</section>
+
+<!-- APP SHELL -->
+<div id="app-shell" class="app-shell hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="crest small">L</div>
+      <div><strong>Lui Secondary</strong><span>School Portal</span></div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="sidebar-foot">Term 3 &bull; 2026</div>
+  </aside>
+  <div class="main-col">
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
+      <div class="topbar-title" id="page-title">Dashboard</div>
+      <div class="clock"><div class="clock-time" id="clock-time"></div><div class="clock-date" id="clock-date"></div></div>
+      <div class="user-chip">
+        <div class="avatar" id="user-avatar"></div>
+        <div class="user-meta"><strong id="user-name"></strong><span id="user-role"></span></div>
+        <button class="btn btn-ghost" id="logout-btn">Sign out</button>
+      </div>
+    </header>
+    <main id="content" class="content"></main>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
